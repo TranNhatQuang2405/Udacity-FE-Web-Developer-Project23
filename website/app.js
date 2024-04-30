@@ -1,6 +1,6 @@
 
 /* Global Variables */
-const openWeatherMapBaseURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?appid="
+const openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather?appid="
 const serverBaseURL = "http://localhost:3000"
 const dataPath = "/data"
 
@@ -28,12 +28,7 @@ const generateCallback = async () => {
 /* Function to GET Web API Data*/
 const retrieveWeather = async (baseURL, APIKey, zip) => {
     let url = baseURL + APIKey + "&zip=" + zip
-    let response = await fetch(url, {
-        method: "GET",
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    })
+    let response = await fetch(url)
     try {
         const data = await response.json()
         console.log("RESPONSE FROM OPENWEATHER: ", data)

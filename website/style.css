@@ -61,6 +61,7 @@ button {
     border: none;
     box-shadow: 2px 4px 5px #444;
     cursor: pointer;
+    z-index: 200;
 }
 
 h1 {
